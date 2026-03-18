@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 import "./App.css";
 
-const PHONE_NUMBER = "06 45 32 89 12";
-const PHONE_CLEAN = "0645328912";
-const WHATSAPP_LINK = "https://wa.me/33645328912";
+const PHONE_NUMBER = "07 85 76 58 44";
+const PHONE_CLEAN = "0785765844";
+const WHATSAPP_LINK = "https://wa.me/33785765844";
 
 const IMG = {
   hero:     "/images/hero_premium_1773676804944.png",
@@ -120,7 +120,7 @@ export default function App() {
             fetchpriority="high"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-emerald-950/30" />
+          <div className="absolute inset-0 bg-linear-to-t from-stone-950/80 via-transparent to-emerald-950/30" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center animate-in fade-in slide-in-from-bottom-8 duration-1000 mt-10 md:mt-0">
@@ -217,7 +217,7 @@ export default function App() {
                   className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-transform duration-700"
                   loading="lazy" decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-emerald-950 to-transparent" />
                 <TreePine className="absolute bottom-6 left-6 w-8 h-8 text-emerald-400" aria-hidden="true" />
               </div>
               <div className="p-8">
@@ -246,7 +246,7 @@ export default function App() {
                   className="absolute inset-0 w-full h-full object-cover object-center opacity-85 group-hover:scale-105 transition-transform duration-700"
                   loading="lazy" decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-emerald-950 to-transparent" />
                 <ShieldCheck className="absolute bottom-6 left-6 w-8 h-8 text-emerald-400" aria-hidden="true" />
               </div>
               <div className="p-8">
@@ -275,7 +275,7 @@ export default function App() {
                   className="absolute inset-0 w-full h-full object-cover object-center opacity-85 group-hover:scale-105 transition-transform duration-700"
                   loading="lazy" decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 to-emerald-950/20" />
+                <div className="absolute inset-0 bg-linear-to-t from-emerald-950 to-emerald-950/20" />
                 <Leaf className="absolute bottom-6 left-6 w-8 h-8 text-emerald-400" aria-hidden="true" />
               </div>
               <div className="p-8">
@@ -407,7 +407,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="min-h-[220px]">
+                <div className="min-h-55">
                   {formStep === 1 && (
                     <div className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-500">
                       <h3 className="text-2xl font-bold text-stone-900 font-serif">Nature des travaux ?</h3>
