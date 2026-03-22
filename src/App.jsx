@@ -139,10 +139,10 @@ export default function App() {
           </h1>
 
           <p className="text-base md:text-xl text-stone-200 font-light max-w-2xl mb-10 leading-relaxed drop-shadow-sm">
-            Marcel Foissotte, artisan élagueur grimpeur spécialiste de l&apos;arbre
-            et des interventions délicates.{" "}
+            Marcel Foissotte, artisan élagueur grimpeur basé à Sotteville-lès-Rouen,
+            spécialiste de l&apos;arbre et des interventions délicates.{" "}
             <br className="hidden md:block" />
-            Élagage, abattage et taille de haies en Normandie et environs.
+            Élagage, abattage et taille de haies à Rouen, Elbeuf, Maromme, Bois-Guillaume et dans toute la Seine-Maritime.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto px-4">
@@ -312,12 +312,13 @@ export default function App() {
             <div className="w-full md:w-1/2">
               <h2 id="why-heading" className="text-3xl md:text-5xl font-bold font-serif mb-6 leading-tight">
                 Intervention rapide <br />
-                sur <span className="text-emerald-400">toute la région</span>.
+                à <span className="text-emerald-400">Rouen et ses environs</span>.
               </h2>
               <p className="text-lg text-emerald-100/70 mb-8 max-w-lg">
-                Matériel performant, respect scrupuleux des règles de sécurité et
-                un travail soigné du premier coup de scie jusqu&apos;au nettoyage de
-                fin de chantier.
+                Basé à Sotteville-lès-Rouen, Marcel Foissotte intervient à Rouen,
+                Elbeuf, Saint-Aubin-lès-Elbeuf, Maromme, Cléon, Bois-Guillaume
+                et dans un rayon de 60&nbsp;km. Matériel performant, sécurité
+                rigoureuse et nettoyage complet de fin de chantier.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex items-center gap-3">
@@ -385,7 +386,7 @@ export default function App() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-1">Zone d&apos;intervention</p>
-                    <p className="font-bold text-lg text-stone-800">Normandie &amp; Environs</p>
+                    <p className="font-bold text-lg text-stone-800">Rouen, Elbeuf, Sotteville &amp; 60&nbsp;km autour</p>
                   </div>
                 </div>
               </div>
@@ -471,6 +472,70 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── Zone d'intervention (Local SEO) ── */}
+      <section className="py-20 bg-stone-100" aria-labelledby="zone-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <p className="text-emerald-600 font-bold tracking-widest text-xs uppercase mb-3 flex justify-center items-center gap-2">
+              <MapPin className="w-4 h-4" aria-hidden="true" /> Zone d&apos;intervention
+            </p>
+            <h2 id="zone-heading" className="text-4xl md:text-5xl font-bold text-stone-900 mb-6 font-serif">
+              Élagueur à Rouen &amp; environs
+            </h2>
+            <p className="text-stone-600 text-lg">
+              Marcel Foissotte, artisan élagueur grimpeur basé à{" "}
+              <strong>Sotteville-lès-Rouen</strong>, intervient dans un rayon de
+              60&nbsp;km autour de Rouen pour tous vos travaux d&apos;élagage,
+              d&apos;abattage et de taille de haies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {[
+              { city: "Rouen", code: "76000" },
+              { city: "Sotteville-lès-Rouen", code: "76300" },
+              { city: "Elbeuf", code: "76500" },
+              { city: "Saint-Aubin-lès-Elbeuf", code: "76410" },
+              { city: "Maromme", code: "76150" },
+              { city: "Cléon", code: "76410" },
+              { city: "Bois-Guillaume", code: "76230" },
+              { city: "Darnétal", code: "76160" },
+              { city: "Mont-Saint-Aignan", code: "76130" },
+              { city: "Le Petit-Quevilly", code: "76140" },
+              { city: "Le Grand-Quevilly", code: "76120" },
+              { city: "Canteleu", code: "76380" },
+              { city: "Saint-Étienne-du-Rouvray", code: "76800" },
+              { city: "Oissel", code: "76350" },
+              { city: "Le Houlme", code: "76770" },
+              { city: "Déville-lès-Rouen", code: "76250" },
+            ].map(({ city, code }) => (
+              <div
+                key={city}
+                className="bg-white rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300 text-center group"
+              >
+                <p className="font-bold text-stone-800 group-hover:text-emerald-700 transition-colors text-sm">
+                  {city}
+                </p>
+                <p className="text-xs text-stone-400 mt-1">{code}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-stone-500 text-sm mb-6">
+              Votre ville n&apos;est pas listée ? Nous intervenons partout dans un rayon de <strong>60&nbsp;km autour de Rouen</strong>.
+            </p>
+            <a
+              href={`tel:${PHONE_CLEAN}`}
+              className="inline-flex items-center gap-3 bg-emerald-600 text-white px-8 py-4 rounded-xl text-base font-bold hover:bg-emerald-500 shadow-lg shadow-emerald-600/30 transition-all hover:-translate-y-1"
+            >
+              <Phone className="w-5 h-5" aria-hidden="true" />
+              Appelez pour un Devis Gratuit
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── Footer ── */}
       <footer className="relative overflow-hidden" aria-label="Pied de page">
         {/* Background: sunset garden image with overlay */}
@@ -494,8 +559,10 @@ export default function App() {
                 <span className="text-2xl font-semibold text-white tracking-tight">M. Foissotte</span>
               </div>
               <p className="text-emerald-100/60 leading-relaxed max-w-sm mb-8 text-sm">
-                Artisan élagueur grimpeur. Expertise et passion de l&apos;arbre au
-                service des particuliers et collectivités en Normandie.
+                Artisan élagueur grimpeur basé à Sotteville-lès-Rouen.
+                Expertise et passion de l&apos;arbre au service des
+                particuliers et collectivités à Rouen, Elbeuf et dans
+                toute la Seine-Maritime.
               </p>
               <a
                 href="#devis"
@@ -525,7 +592,7 @@ export default function App() {
                 </a>
                 <p className="flex items-start gap-3 text-emerald-100/70">
                   <MapPin className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" aria-hidden="true" />
-                  Normandie &amp; environs
+                  Sotteville-lès-Rouen &amp; 60&nbsp;km autour
                 </p>
               </address>
             </div>
@@ -551,7 +618,7 @@ export default function App() {
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 py-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-emerald-100/40">
-            <p>&copy; {new Date().getFullYear()} Mr. Foissotte Marcel &mdash; Artisan Élagueur, Normandie.</p>
+            <p>&copy; {new Date().getFullYear()} Mr. Foissotte Marcel &mdash; Artisan Élagueur à Sotteville-lès-Rouen, Seine-Maritime.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
               <a href="#" className="hover:text-white transition-colors">Politique de Cookies</a>

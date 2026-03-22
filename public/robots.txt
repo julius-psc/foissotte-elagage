@@ -1,0 +1,5 @@
+# robots.txt – foissotte-elagage.fr
+User-agent: *
+Allow: /
+
+Sitemap: https://foissotte-elagage.fr/sitemap.xml
