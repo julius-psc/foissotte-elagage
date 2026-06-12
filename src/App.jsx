@@ -10,6 +10,8 @@ import {
   ArrowRight,
   TreePine,
 } from "lucide-react";
+import MentionsLegales from "./MentionsLegales";
+import PolitiqueCookies from "./PolitiqueCookies";
 import "./App.css";
 
 const PHONE_NUMBER = "07 85 76 58 44";
@@ -53,8 +55,16 @@ function Counter({ end, suffix = "", duration = 2000 }) {
 }
 
 export default function App() {
+  const [page, setPage] = useState("home");
   const [formStep, setFormStep] = useState(1);
   const [formData, setFormData] = useState({ description: "", location: "", contact: "" });
+
+  useEffect(() => {
+    if (page !== "home") window.scrollTo(0, 0);
+  }, [page]);
+
+  if (page === "mentions-legales") return <MentionsLegales onBack={() => setPage("home")} />;
+  if (page === "cookies") return <PolitiqueCookies onBack={() => setPage("home")} />;
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -620,8 +630,8 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 py-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-emerald-100/40">
             <p>&copy; {new Date().getFullYear()} Mr. Foissotte Marcel &mdash; Artisan Élagueur à Sotteville-lès-Rouen, Seine-Maritime.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
-              <a href="#" className="hover:text-white transition-colors">Politique de Cookies</a>
+              <button onClick={() => setPage("mentions-legales")} className="hover:text-white transition-colors">Mentions Légales</button>
+              <button onClick={() => setPage("cookies")} className="hover:text-white transition-colors">Politique de Cookies</button>
             </div>
           </div>
         </div>
